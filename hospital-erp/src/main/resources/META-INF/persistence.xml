@@ -1,0 +1,44 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+    version="3.0">
+
+    <persistence-unit name="hospitalPU">
+
+        <class>com.hospital.entity.Patient</class>
+        <class>com.hospital.entity.MedicalRecord</class>
+        <class>com.hospital.entity.Department</class>
+        <class>com.hospital.entity.Doctor</class>
+        <class>com.hospital.entity.Appointment</class>
+        <class>com.hospital.entity.Prescription</class>
+
+        <properties>
+
+            <!-- PostgreSQL Connection -->
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="org.postgresql.Driver"/>
+
+            <property name="jakarta.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5432/hospital_db"/>
+
+            <property name="jakarta.persistence.jdbc.user"
+                      value="postgres"/>
+
+            <property name="jakarta.persistence.jdbc.password"
+                      value="Abhi9693"/>
+
+            <!-- Hibernate Dialect -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+            <!-- Auto table creation -->
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
+
+            <property name="hibernate.show_sql"
+                      value="true"/>
+
+            <property name="hibernate.format_sql"
+                      value="true"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
